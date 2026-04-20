@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage('clone') {
+            steps{
+                https://github.com/Steven45155/laboratorio.git
+            }
+        }
+        stage('Build Docker'){
+            steps{
+                sh 'docker build -t mi-app .'
+            }
+        }
+    }
+}
